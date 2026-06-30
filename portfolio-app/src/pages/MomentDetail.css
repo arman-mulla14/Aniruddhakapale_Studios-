@@ -1,0 +1,136 @@
+.moment-detail-page {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+.moment-hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.moment-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.moment-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, var(--bg-primary) 100%);
+  z-index: 2;
+}
+
+.moment-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.back-btn {
+  display: inline-block;
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+}
+
+.moment-hero-content h1 {
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-family: var(--font-heading);
+  color: var(--accent-champagne);
+  margin-bottom: 10px;
+}
+
+.moment-meta {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.moment-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+}
+
+.moment-masonry {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.moment-masonry-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.moment-masonry-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.moment-masonry-item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .moment-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .moment-masonry {
+    column-count: 1;
+  }
+}
+
+.moment-detail-loading,
+.moment-detail-error {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  border-top-color: var(--accent-gold);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
