@@ -211,43 +211,61 @@ class _ConfirmedOrdersScreenState extends State<ConfirmedOrdersScreen> {
                 color: const Color(0xFF202020),
                 margin: const EdgeInsets.only(bottom: 12),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: ListTile(
-                    leading: const CircleAvatar(backgroundColor: Color(0xFF171717), child: Icon(Icons.check_circle, color: Colors.green)),
-                    title: Text(order['clientName'] ?? 'Unknown', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 4),
-                        Text('Location: ${order['location'] ?? 'N/A'}', style: const TextStyle(color: Colors.white70)),
-                        if (order['phone'] != null && order['phone'].toString().isNotEmpty) Text('Phone: ${order['phone']}', style: const TextStyle(color: Colors.white54)),
-                        const SizedBox(height: 4),
-                        Text('Pending: ₹${order['pendingAmount'] ?? 0}', style: const TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text('₹${order['totalAmount'] ?? 0}', style: const TextStyle(color: Color(0xFFD4AF37), fontWeight: FontWeight.bold, fontSize: 16)),
-                        const SizedBox(width: 8),
-                        IconButton(
-                          icon: const Icon(Icons.payment, color: Colors.green, size: 20),
-                          tooltip: 'Payment Done',
-                          onPressed: () => _markPaymentDone(doc.id),
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.edit, color: Colors.blue, size: 20),
-                          tooltip: 'Edit',
-                          onPressed: () => _showCreateOrderDialog(context, docId: doc.id, initialData: order),
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.delete, color: Colors.red, size: 20),
-                          tooltip: 'Delete',
-                          onPressed: () => _deleteOrder(doc.id),
-                        ),
-                      ],
-                    ),
-                    isThreeLine: true,
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            order['clientName'] ?? 'Unknown',
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          const Icon(Icons.check_circle, color: Colors.green),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text('Location: ${order['location'] ?? 'N/A'}', style: const TextStyle(color: Colors.white70)),
+                      if (order['phone'] != null && order['phone'].toString().isNotEmpty)
+                        Text('Phone: ${order['phone']}', style: const TextStyle(color: Colors.white54)),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Pending: ₹${order['pendingAmount'] ?? 0}',
+                            style: const TextStyle(color: Colors.orange, fontWeight: FontWeight.bold, fontSize: 15),
+                          ),
+                          Text(
+                            'Total: ₹${order['totalAmount'] ?? 0}',
+                            style: const TextStyle(color: Color(0xFFD4AF37), fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                        ],
+                      ),
+                      const Divider(color: Colors.white12, height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton.icon(
+                            icon: const Icon(Icons.payment, color: Colors.green, size: 18),
+                            label: const Text('Payment Done', style: TextStyle(color: Colors.green)),
+                            onPressed: () => _markPaymentDone(doc.id),
+                          ),
+                          const SizedBox(width: 8),
+                          IconButton(
+                            icon: const Icon(Icons.edit, color: Colors.blue, size: 20),
+                            tooltip: 'Edit',
+                            onPressed: () => _showCreateOrderDialog(context, docId: doc.id, initialData: order),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red, size: 20),
+                            tooltip: 'Delete',
+                            onPressed: () => _deleteOrder(doc.id),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               );

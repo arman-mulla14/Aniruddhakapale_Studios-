@@ -5,20 +5,20 @@ import { db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import './MomentDetail.css';
 
-// Default static fallbacks for moments so the page is fully working even if DB is empty
+// Default static fallbacks for moments with optimized image size parameters for fast load times
 const defaultMomentsFallback = {
   '1': {
     title: "The First Dance",
     location: "Mumbai",
     date: "Oct 2025",
     description: "A beautiful evening captured in Mumbai. The soft lights, the swirling gown, and the quiet glance that shared a lifetime promise.",
-    coverImage: "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=75&w=1200&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=70&w=800&auto=format&fit=crop"
     ]
   },
   '2': {
@@ -26,12 +26,12 @@ const defaultMomentsFallback = {
     location: "Goa",
     date: "Dec 2025",
     description: "Whispered promises against the ocean breeze. A serene and emotional ceremony set on the sandy beaches of South Goa.",
-    coverImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=75&w=1200&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507504038482-7621c5f606a0?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507504038482-7621c5f606a0?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=70&w=800&auto=format&fit=crop"
     ]
   },
   '3': {
@@ -39,12 +39,12 @@ const defaultMomentsFallback = {
     location: "Jaipur",
     date: "Nov 2025",
     description: "Laughter that echoed through the royal corridors. Celebrating a colorful pre-wedding sangeet filled with dance and endless smiles.",
-    coverImage: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=75&w=1200&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=70&w=800&auto=format&fit=crop"
     ]
   },
   '4': {
@@ -52,12 +52,12 @@ const defaultMomentsFallback = {
     location: "Kerala",
     date: "Jan 2026",
     description: "Quiet mornings on backwaters, capturing the stillness of a couple beginning a journey of eternity in God's Own Country.",
-    coverImage: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=75&w=1200&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507504038482-7621c5f606a0?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507504038482-7621c5f606a0?q=70&w=800&auto=format&fit=crop"
     ]
   },
   '5': {
@@ -65,12 +65,12 @@ const defaultMomentsFallback = {
     location: "Udaipur",
     date: "Feb 2026",
     description: "Sunsets reflecting off Lake Pichola. A luxury pre-wedding shoot wrapped in warm, romantic, cinematic lighting.",
-    coverImage: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=75&w=1200&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=70&w=800&auto=format&fit=crop"
     ]
   },
   '6': {
@@ -78,12 +78,12 @@ const defaultMomentsFallback = {
     location: "Pune",
     date: "Mar 2026",
     description: "An intimate and elegant modern engagement, capturing details of raw laughter, tears, and rings that symbolize forever.",
-    coverImage: "https://images.unsplash.com/photo-1606214174585-f8f40733816a?q=80&w=2070&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1606214174585-f8f40733816a?q=75&w=1200&auto=format&fit=crop",
     galleryImages: [
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=70&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=70&w=800&auto=format&fit=crop"
     ]
   }
 };
@@ -103,7 +103,6 @@ const MomentDetail = () => {
         if (docSnap.exists()) {
           setMoment(docSnap.data());
         } else {
-          // Check if it's one of our fallback keys
           if (defaultMomentsFallback[id]) {
             setMoment(defaultMomentsFallback[id]);
           } else {
@@ -112,7 +111,6 @@ const MomentDetail = () => {
         }
       } catch (error) {
         console.error("Error fetching moment:", error);
-        // Attempt fallback even on fetch error to ensure it works offline/locally
         if (defaultMomentsFallback[id]) {
           setMoment(defaultMomentsFallback[id]);
         }
