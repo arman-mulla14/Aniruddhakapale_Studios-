@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - AK Studios</title>
+    <style>
+        body {
+            background-color: #0a050d;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-card {
+            background: #160c1d;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #2b1136;
+            border: 1px solid #442055;
+            color: white;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #e6e6fa 0%, #b3a1c7 100%);
+            color: #2b1136;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1 style="font-family: 'Playfair Display', serif; margin-bottom: 2rem; color: #e6e6fa;">Admin Secure Login</h1>
+        <form id="loginForm">
+            <input type="email" id="adminEmail" placeholder="Admin Email" required>
+            <input type="password" id="adminPassword" placeholder="Password" required>
+            <div id="errorMsg" style="color: #ff6b6b; margin-bottom: 1rem; font-size: 0.9rem;"></div>
+            <button type="submit">Login to Dashboard</button>
+        </form>
+    </div>
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>
