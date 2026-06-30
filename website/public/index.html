@@ -1,173 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniruddha Kapale Studios | Premium Storytelling Photography</title>
-    <meta name="description" content="Cinematic and elegant storytelling photography capturing your most precious moments. Wedding, Portrait, and Event photography.">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Aniruddhakapale Studios | Premium Photography</title>
     
-    <!-- Fonts -->
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="We don't just take photos. We preserve the moments you'll remember for the rest of your life." />
+    <meta property="og:title" content="Aniruddhakapale Studios | Premium Photography" />
+    <meta property="og:description" content="Every Love Story Deserves to Be Remembered." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animations.css">
-
-    <!-- GSAP & Lenis for Smooth Scrolling -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-</head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader-text">AK STUDIOS</div>
-    </div>
-
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container nav-container">
-            <a href="#" class="brand-logo">Aniruddha Kapale</a>
-            <nav>
-                <div class="hamburger" id="hamburger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </div>
-                <ul class="nav-links" id="navLinks">
-                    <li class="close-menu" id="closeMenu">&times;</li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="#contact" class="btn btn-primary nav-btn" style="margin-top: 1rem;">Book Now</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <!-- REPLACE IMAGE: Update the 'src' below with your local hero image, e.g., src="images/hero/main-banner.jpg" -->
-        <section class="hero-section" style="height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center;">
-            <div class="hero-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" class="parallax-image" alt="Cinematic Wedding Photography">
-                <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(10,5,13,0.6);"></div>
-            </div>
-            <div class="hero-content container">
-                <span class="section-subtitle">Premium Storytelling</span>
-                <h1 class="section-title reveal-text">Capturing Moments<br>That Become Memories</h1>
-                <p style="max-width: 600px; margin: 0 auto var(--space-md); font-size: 1.1rem; color: var(--color-text-muted);">
-                    Every frame tells a story. Step into a world where emotions, connections, and timeless memories are preserved beautifully.
-                </p>
-                <a href="#portfolio" class="btn">Explore Portfolio</a>
-            </div>
-        </section>
-
-        <!-- Quote Section -->
-        <section class="section text-center" style="background: var(--color-bg-light);">
-            <div class="container">
-                <h2 class="quote-text">
-                    "Some moments pass; photographs make them eternal."
-                </h2>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container about-grid">
-                <!-- REPLACE IMAGE: Update the 'src' below with a photo of the photographer, e.g., src="images/about/profile.jpg" -->
-                <div class="image-reveal-wrapper hover-zoom" style="height: 600px;">
-                    <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?q=80&w=2070&auto=format&fit=crop" alt="Photographer" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div>
-                    <span class="section-subtitle">The Artist</span>
-                    <h2 class="section-title">Visual Storyteller & Creator</h2>
-                    <p style="margin-bottom: var(--space-sm); color: var(--color-text-muted);">
-                        With a passion for cinematic lighting and authentic emotions, my goal is to document your life's most precious chapters in a way that feels natural, elegant, and profoundly moving.
-                    </p>
-                    <p style="margin-bottom: var(--space-md); color: var(--color-text-muted);">
-                        I believe photography is more than just taking pictures; it's about freezing the heartbeat of time. Let's create something timeless together.
-                    </p>
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section" style="background: var(--color-bg-light);">
-            <div class="container text-center">
-                <span class="section-subtitle">Featured Work</span>
-                <h2 class="section-title">Cinematic Stories</h2>
-                
-                <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg);">
-                    <!-- Dynamic Content will be loaded via JS from Firebase -->
-                    
-                    <!-- REPLACE IMAGES: Update the 'src' below with your portfolio images, e.g., src="images/portfolio/wedding-1.jpg" -->
-                    <div class="portfolio-item hover-zoom" style="position: relative; height: 400px; cursor: pointer;">
-                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover;" alt="Wedding">
-                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition-fast);" class="portfolio-overlay">
-                            <h3 style="color: white; font-size: 1.5rem;">Wedding Elegance</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item hover-zoom" style="position: relative; height: 400px; cursor: pointer;">
-                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover;" alt="Portrait">
-                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition-fast);" class="portfolio-overlay">
-                            <h3 style="color: white; font-size: 1.5rem;">Soulful Portraits</h3>
-                        </div>
-                    </div>
-                    <div class="portfolio-item hover-zoom" style="position: relative; height: 400px; cursor: pointer;">
-                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover;" alt="Event">
-                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition-fast);" class="portfolio-overlay">
-                            <h3 style="color: white; font-size: 1.5rem;">Event Highlights</h3>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top: var(--space-lg);">
-                    <a href="#" class="btn">View Full Portfolio</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container text-center" style="max-width: 800px;">
-                <span class="section-subtitle">Let's Connect</span>
-                <h2 class="section-title">Your Story Deserves To Be Remembered</h2>
-                <form id="contactForm" style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-lg); text-align: left;">
-                    <input type="text" id="contactName" placeholder="Your Name" required style="padding: 1rem; background: var(--color-bg-light); border: 1px solid var(--color-primary-light); color: white; width: 100%; font-family: var(--font-secondary);">
-                    <input type="email" id="contactEmail" placeholder="Email Address" required style="padding: 1rem; background: var(--color-bg-light); border: 1px solid var(--color-primary-light); color: white; width: 100%; font-family: var(--font-secondary);">
-                    <select id="contactService" style="padding: 1rem; background: var(--color-bg-light); border: 1px solid var(--color-primary-light); color: white; width: 100%; font-family: var(--font-secondary);">
-                        <option>Wedding Photography</option>
-                        <option>Pre-Wedding Shoot</option>
-                        <option>Portrait Session</option>
-                        <option>Event Coverage</option>
-                    </select>
-                    <textarea id="contactMessage" placeholder="Tell me about your event..." rows="5" required style="padding: 1rem; background: var(--color-bg-light); border: 1px solid var(--color-primary-light); color: white; width: 100%; font-family: var(--font-secondary);"></textarea>
-                    <button type="submit" class="btn btn-primary" style="margin-top: var(--space-sm);">Send Inquiry</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer style="padding: var(--space-md) 0; border-top: 1px solid var(--color-primary-light); text-align: center;">
-        <div class="container">
-            <p style="color: var(--color-text-muted); font-size: 0.9rem;">&copy; 2026 Aniruddha Kapale Studios. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox Gallery -->
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
-        <img class="lightbox-img" id="lightboxImg" src="">
-        <span class="lightbox-next" id="lightboxNext">&#10095;</span>
-    </div>
-
-    <!-- Firebase Scripts (Modular v9) -->
-    <script type="module" src="js/firebase.js"></script>
-    <!-- Main JS -->
-    <script type="module" src="js/main.js"></script>
-</body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-BZOByAXw.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-uO-8Ld5X.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>

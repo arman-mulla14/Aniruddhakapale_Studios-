@@ -15,7 +15,7 @@ const Hero = () => {
       >
         <div className="hero-overlay"></div>
         {/* Placeholder image, later can be a cinematic video or high-res photo */}
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop" alt="Cinematic Wedding" className="hero-bg-image" />
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=75&w=1200&auto=format&fit=crop" alt="Cinematic Wedding" className="hero-bg-image" />
       </motion.div>
       
       <div className="hero-content container">

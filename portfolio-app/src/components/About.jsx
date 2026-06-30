@@ -14,7 +14,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <img src="https://images.unsplash.com/photo-1554046920-90dcac824ab1?q=80&w=1974&auto=format&fit=crop" alt="Photographer" className="about-image" />
+            <img src="https://images.unsplash.com/photo-1554046920-90dcac824ab1?q=75&w=1000&auto=format&fit=crop" alt="Photographer" className="about-image" />
           </motion.div>
           
           <motion.div 

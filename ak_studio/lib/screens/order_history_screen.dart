@@ -36,31 +36,39 @@ class OrderHistoryScreen extends StatelessWidget {
                 color: const Color(0xFF202020),
                 margin: const EdgeInsets.only(bottom: 12),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: ListTile(
-                    leading: const CircleAvatar(
-                      backgroundColor: Colors.green,
-                      child: Icon(Icons.done_all, color: Colors.white),
-                    ),
-                    title: Text(order['clientName'] ?? 'Unknown', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 4),
-                        Text('Location: ${order['location'] ?? 'N/A'}', style: const TextStyle(color: Colors.white70)),
-                        if (order['phone'] != null && order['phone'].toString().isNotEmpty)
-                          Text('Phone: ${order['phone']}', style: const TextStyle(color: Colors.white54)),
-                      ],
-                    ),
-                    trailing: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text('₹${order['totalAmount'] ?? 0}', style: const TextStyle(color: Color(0xFFD4AF37), fontWeight: FontWeight.bold, fontSize: 16)),
-                        const SizedBox(height: 4),
-                        const Text('Paid', style: TextStyle(color: Colors.green, fontSize: 12, fontWeight: FontWeight.bold)),
-                      ],
-                    ),
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            order['clientName'] ?? 'Unknown',
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          const Icon(Icons.done_all, color: Colors.green),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text('Location: ${order['location'] ?? 'N/A'}', style: const TextStyle(color: Colors.white70)),
+                      if (order['phone'] != null && order['phone'].toString().isNotEmpty)
+                        Text('Phone: ${order['phone']}', style: const TextStyle(color: Colors.white54)),
+                      const SizedBox(height: 12),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'Status: Paid',
+                            style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Total: ₹${order['totalAmount'] ?? 0}',
+                            style: const TextStyle(color: Color(0xFFD4AF37), fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               );

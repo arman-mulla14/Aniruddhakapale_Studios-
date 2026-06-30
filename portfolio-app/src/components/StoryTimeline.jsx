@@ -15,42 +15,42 @@ const defaultChapters = [
     title: "Chapter 1",
     subtitle: "Two strangers meet.",
     description: "The beginning of everything. A glance, a smile, a connection that feels inevitable.",
-    images: ["https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop"]
+    images: ["https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=70&w=600&auto=format&fit=crop"]
   },
   {
     id: '2',
     title: "Chapter 2",
     subtitle: "Coffee dates. Laughter. Tiny memories.",
     description: "Building a world together, one cup of coffee at a time.",
-    images: ["https://images.unsplash.com/photo-1517462964-21fdcec3f25b?q=80&w=2070&auto=format&fit=crop"]
+    images: ["https://images.unsplash.com/photo-1517462964-21fdcec3f25b?q=70&w=600&auto=format&fit=crop"]
   },
   {
     id: '3',
     title: "Chapter 3",
     subtitle: "The proposal.",
     description: "A single question that changes everything.",
-    images: ["https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop"]
+    images: ["https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=70&w=600&auto=format&fit=crop"]
   },
   {
     id: '4',
     title: "Chapter 4",
     subtitle: "Engagement.",
     description: "Golden-hour photography capturing the promise of tomorrow.",
-    images: ["https://images.unsplash.com/photo-1518049362265-d5b2a6467637?q=80&w=2083&auto=format&fit=crop"]
+    images: ["https://images.unsplash.com/photo-1518049362265-d5b2a6467637?q=70&w=600&auto=format&fit=crop"]
   },
   {
     id: '5',
     title: "Chapter 5",
     subtitle: "Wedding Day.",
     description: "Large cinematic moments. Confetti, tears, and vows.",
-    images: ["https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop"]
+    images: ["https://images.unsplash.com/photo-1606800052052-a08af7148866?q=70&w=600&auto=format&fit=crop"]
   },
   {
     id: '6',
     title: "Chapter 6",
     subtitle: "Their Forever.",
     description: "Family photos. Baby photos. Future memories.",
-    images: ["https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop"]
+    images: ["https://images.unsplash.com/photo-1511895426328-dc8714191300?q=70&w=600&auto=format&fit=crop"]
   }
 ];
 

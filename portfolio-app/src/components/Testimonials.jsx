@@ -6,21 +6,24 @@ import './Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah & James",
-    quote: "They didn't just take photos. They captured the very essence of our love. Every time I look at our album, I cry.",
-    image: "https://images.unsplash.com/photo-1522851142566-1c05d7b57b98?q=80&w=2070&auto=format&fit=crop"
+    name: "Sarah & David",
+    role: "Wedding Session",
+    image: "https://images.unsplash.com/photo-1522851142566-1c05d7b57b98?q=70&w=150&auto=format&fit=crop",
+    quote: "Antigravity didn't just take pictures; they captured the absolute magic of our wedding. Every time we look at our photos, we are transported right back to that day."
   },
   {
     id: 2,
-    name: "Priya & Rahul",
-    quote: "A truly cinematic experience. They made us feel like movie stars on our wedding day. Absolutely premium service.",
-    image: "https://images.unsplash.com/photo-1542031536-1e438bd233d4?q=80&w=1974&auto=format&fit=crop"
+    name: "Aisha & Kabir",
+    role: "Pre-Wedding Session",
+    image: "https://images.unsplash.com/photo-1542031536-1e438bd233d4?q=70&w=150&auto=format&fit=crop",
+    quote: "Working with them was an absolute dream. They made us feel so comfortable, and the final photos look like stills from a classic romance film."
   },
   {
     id: 3,
-    name: "Emma & Michael",
-    quote: "The best decision we made for our wedding. The attention to detail and storytelling is unmatched.",
-    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop"
+    name: "Meera & Rohan",
+    role: "Engagement Session",
+    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=70&w=150&auto=format&fit=crop",
+    quote: "The dedication to storytelling and lighting is unparalleled. We are forever grateful for these stunning visual memories."
   }
 ];
 
